@@ -1,0 +1,35 @@
+
+<h2><%= @community.name %></h2>
+
+<span class="row mb-4">
+  <span class="col-sm-8">
+
+  
+
+ <%= render partial: "posts/list", locals: {posts: @posts}%>
+
+
+
+</span>
+<span class="col-sm-4">
+<span class="card p-3">
+<h5>About this community </h5>
+<p class="mt-2"><%= @community.summary%></p>
+
+<p><%=pluralize @subscriber_count, "Member"%>  </p>
+<% if @is_subscribed %>
+<%= link_to "Create New Post", new_community_post_path(@community), class: "btn btn-primary float-right" %>
+<%else%>
+<%=render partial: "communities/subscribe", locals: { community_id: @community.id }%>
+
+<% end %>
+
+</span>
+<br  />
+<span class="card p-3">
+<small class="pt-3"> <h5>Rules:</h5> <p>
+<%= simple_format @community.rules %> </p>
+</small>
+</span>
+</span>
+</span>

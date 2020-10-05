@@ -1,0 +1,7 @@
+<%= form_for @subscription do |f|%>
+
+<%=f.hidden_field :community_id, value: community_id%>
+<%= f.submit "Join Subreddit", class: "btn btn-success text-uppercase center"%>
+
+
+<% end %>

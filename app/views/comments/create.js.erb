@@ -1,0 +1,4 @@
+console.log("comment created...");
+
+document.getElementById("post_comments").innerHTML = "<%= escape_javascript(render partial: 'posts/comments', locals: {comments: @comments})%>"
+document.querySelector("#new_comment textarea").value = ""
